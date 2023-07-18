@@ -15,7 +15,6 @@ class ButtonComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap as void Function()?,
-
       child: Container(
         height: 50,
         width: 130,

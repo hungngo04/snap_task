@@ -5,14 +5,14 @@ import 'package:snap_task/ui/theme_config.dart';
 import 'package:snap_task/ui/widgets/input_field.dart';
 import 'package:snap_task/ui/widgets/task_tile.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class DemoCoreUI extends StatefulWidget {
+  const DemoCoreUI({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<DemoCoreUI> createState() => _DemoCoreUIState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _DemoCoreUIState extends State<DemoCoreUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

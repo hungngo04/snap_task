@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:snap_task/ui/pages/demo_core_ui.dart';
 import 'package:snap_task/ui/pages/home_page.dart';
 import 'package:snap_task/ui/size_config.dart';
 
@@ -13,9 +14,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: DemoCoreUI(),
     );
   }
 }
