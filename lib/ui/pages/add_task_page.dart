@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_management/controllers/task_controller.dart';
@@ -6,10 +8,25 @@ import 'package:task_management/ui/theme.dart';
 import 'package:task_management/ui/widgets/button.dart';
 import 'package:task_management/ui/widgets/input_field.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter_widgetkit/flutter_widgetkit.dart';
 
 class AddTaskPage extends StatefulWidget {
   @override
   _AddTaskPageState createState() => _AddTaskPageState();
+}
+
+class FlutterWidgetData {
+  final String text;
+
+  FlutterWidgetData(this.text);
+
+  FlutterWidgetData.fromJson(Map<String, dynamic> json)
+      : text = json['text'];
+
+  Map<String, dynamic> toJson() =>
+    {
+      'text': text,
+    };
 }
 
 class _AddTaskPageState extends State<AddTaskPage> {
@@ -210,6 +227,9 @@ class _AddTaskPageState extends State<AddTaskPage> {
                     label: "Create Task",
                     onTap: () {
                       _validateInputs();
+                      WidgetKit.setItem('widgetData', jsonEncode(FlutterWidgetData(_titleController.text)), 'group.snaptask.flutterwidgetextension');
+                      WidgetKit.reloadAllTimelines();
+                      debugPrint(_noteController.text);
                     },
                   ),
                 ],
